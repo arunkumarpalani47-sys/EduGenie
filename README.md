@@ -1,3 +1,5 @@
+site link : https://edu-genie-hazel-six.vercel.app/
+
 # 🎓 EduGenie – AI Learning Assistant & Interactive Tutor
 
 <div align="center">
