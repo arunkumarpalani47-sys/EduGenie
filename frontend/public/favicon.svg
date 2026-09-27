@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="edugenie-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Rounded Squircle Base -->
+  <rect width="64" height="64" rx="16" fill="url(#edugenie-grad)" />
+  
+  <!-- Main Magic Sparkle -->
+  <path d="M32 10 C32 22 22 32 10 32 C22 32 32 42 32 54 C32 42 42 32 54 32 C42 32 32 22 32 10 Z" fill="#FFFFFF" filter="url(#glow)" />
+  
+  <!-- Mini Gold Sparkle Top-Right -->
+  <path d="M48 14 C48 18 45 21 41 21 C45 21 48 24 48 28 C48 24 51 21 55 21 C51 21 48 18 48 14 Z" fill="#FDE047" />
+  
+  <!-- Mini Soft Sparkle Bottom-Left -->
+  <path d="M16 42 C16 45 14 47 11 47 C14 47 16 49 16 52 C16 49 18 47 21 47 C18 47 16 45 16 42 Z" fill="#C7D2FE" />
+</svg>

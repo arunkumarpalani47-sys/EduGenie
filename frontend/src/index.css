@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* ─── Scrollbar ──────────────────────────────────────────── */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #c7d2fe #f1f5f9;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-slate-100 rounded;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-indigo-200 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-400;
+  }
+
+  /* ─── Chat Bubbles ───────────────────────────────────────── */
+  .bubble-user {
+    @apply bg-indigo-600 text-white rounded-2xl rounded-br-sm px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-sm break-words;
+  }
+  .bubble-assistant {
+    @apply bg-white text-slate-800 rounded-2xl rounded-bl-sm px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-sm border border-slate-100 break-words;
+  }
+
+  /* ─── Markdown Styles inside Assistant Bubble ────────────── */
+  .markdown-body {
+    @apply leading-relaxed;
+  }
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3 {
+    @apply font-semibold text-indigo-700 mt-3 mb-1;
+  }
+  .markdown-body h1 { @apply text-lg; }
+  .markdown-body h2 { @apply text-base; }
+  .markdown-body h3 { @apply text-sm; }
+  .markdown-body p  { @apply mb-2 last:mb-0; }
+  .markdown-body ul { @apply list-disc ml-4 mb-2 space-y-1; }
+  .markdown-body ol { @apply list-decimal ml-4 mb-2 space-y-1; }
+  .markdown-body li { @apply text-slate-700; }
+  .markdown-body strong { @apply font-semibold text-indigo-700; }
+  .markdown-body em    { @apply italic text-slate-600; }
+  .markdown-body code  {
+    @apply bg-slate-100 text-indigo-700 px-1.5 py-0.5 rounded text-sm font-mono break-all;
+  }
+  .markdown-body pre {
+    @apply bg-slate-900 text-slate-100 rounded-lg p-3 my-2 overflow-x-auto text-sm max-w-full;
+  }
+  .markdown-body pre code {
+    @apply bg-transparent text-slate-100 p-0 break-normal;
+  }
+  .markdown-body blockquote {
+    @apply border-l-4 border-indigo-300 pl-3 my-2 text-slate-600 italic;
+  }
+  .markdown-body hr {
+    @apply border-slate-200 my-3;
+  }
+  .markdown-body table {
+    @apply block overflow-x-auto max-w-full text-sm border-collapse my-2;
+  }
+  .markdown-body th {
+    @apply bg-indigo-50 text-indigo-700 font-semibold px-3 py-2 border border-slate-200 text-left whitespace-nowrap;
+  }
+  .markdown-body td {
+    @apply px-3 py-2 border border-slate-200;
+  }
+  .markdown-body tr:nth-child(even) {
+    @apply bg-slate-50;
+  }
+
+  /* ─── Typing Indicator ───────────────────────────────────── */
+  .typing-dot {
+    @apply w-2 h-2 bg-indigo-400 rounded-full animate-bounce;
+  }
+
+  /* ─── Input Area ──────────────────────────────────────────── */
+  .chat-input {
+    @apply w-full resize-none bg-white border border-slate-200 rounded-2xl px-4 py-3 
+           text-slate-800 placeholder-slate-400 text-sm leading-relaxed
+           focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  /* ─── Quick Action Card ──────────────────────────────────── */
+  .quick-action {
+    @apply flex flex-col items-start gap-1 p-3 sm:p-4 bg-white rounded-xl border border-slate-200
+           cursor-pointer hover:border-indigo-300 hover:bg-indigo-50 hover:shadow-sm
+           transition-all duration-200 text-left;
+  }
+}
+
+/* ─── Bounce animation delays ─────────────────────────────── */
+.delay-150 { animation-delay: 150ms; }
+.delay-300 { animation-delay: 300ms; }
